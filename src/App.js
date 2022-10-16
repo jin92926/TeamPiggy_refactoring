@@ -25,7 +25,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Register />} />
           <Route path="/create" element={<Create />} />
-          <Route path="/create/:id" element={<CreatedItem />} />
+          <Route path="/create/now" element={<CreatedItem />} />
           <Route path="/draw" element={<Draw />} />
           <Route path="/draw/:id" element={<DrewItem />} />
           <Route path="/find" element={<Find />} />
