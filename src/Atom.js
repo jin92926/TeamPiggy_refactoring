@@ -10,3 +10,9 @@ export const userAtom = atom({
   },
   effects_UNSTABLE: [persistAtom],
 });
+
+export const createdObjAtom = atom({
+  key: "createdObjAtom",
+  default: {},
+  effects_UNSTABLE: [persistAtom],
+});
