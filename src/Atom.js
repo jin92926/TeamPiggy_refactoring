@@ -5,10 +5,15 @@ const { persistAtom } = recoilPersist();
 
 export const loginState = atom({
   key: "loginState",
-  // default: false, // 빈객체로 줘도 되고, 여러개 지정해줘도 되고.
   default: {
     isLogin: false,
     userName: "",
   },
+  effects_UNSTABLE: [persistAtom],
+});
+
+export const createdObjAtom = atom({
+  key: "createdObjAtom",
+  default: {},
   effects_UNSTABLE: [persistAtom],
 });
