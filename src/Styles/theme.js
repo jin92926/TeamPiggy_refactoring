@@ -5,7 +5,7 @@ const theme = {
   border: "#ebebeb",
   white: "#f2f2f2",
   blue: "#3B6BB7",
-  violet: "F6E7FB",
+  violet: "#F6E7FB",
 };
 
 export default theme;

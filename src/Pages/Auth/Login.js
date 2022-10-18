@@ -11,10 +11,14 @@ import { AuthContainer, AuthInput, AuthBtn, LoginSocialBtn } from "./AuthStyle";
 import { GoogleIconSvg, GithubIconSvg } from "Assets/Svg";
 import { FaEnvelope, FaLock } from "react-icons/fa";
 import { BiRightArrowAlt } from "react-icons/bi";
+import { useRecoilState } from "recoil";
+import { loginState } from "Atom";
 
 export default function Login() {
   const [loginEmail, setLoginEmail] = useState(""); //id
   const [loginPassword, setLoginPassword] = useState(""); //pw
+  const [state, setState] = useRecoilState(loginState);
+
   const navigate = useNavigate();
 
   const onChange = (event) => {
@@ -38,6 +42,10 @@ export default function Login() {
         loginEmail,
         loginPassword
       ); // 로그인
+      setState({
+        isLogin: true,
+        userName: loginEmail,
+      });
       alert("로그인 성공");
       navigate("/");
     } catch (error) {

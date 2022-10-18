@@ -1,4 +1,18 @@
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+import theme from "./theme";
+
+const GlobalStyle = createGlobalStyle`
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+a{
+  color: ${theme.primary}
+}
+`;
 
 export const Container = styled.div`
   display: flex;
@@ -19,3 +33,5 @@ export const Input = styled.input`
   outline: none;
   border-radius: 5px;
 `;
+
+export default GlobalStyle;
