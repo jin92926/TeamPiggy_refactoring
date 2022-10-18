@@ -8,11 +8,6 @@ export const AuthContainer = styled(Container)`
   flex-direction: column;
   align-items: center;
   /* width: 1140px; */
-  background: linear-gradient(
-    180.45deg,
-    ${theme.violet} 1.69%,
-    ${theme.blue} 99.25%
-  );
   z-index: 1;
   header {
     margin: 30px 0;

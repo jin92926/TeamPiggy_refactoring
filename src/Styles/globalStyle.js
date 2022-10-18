@@ -20,6 +20,11 @@ export const Container = styled.div`
   align-items: center;
   width: 100%;
   height: 100vh;
+  background: linear-gradient(
+    180.45deg,
+    ${theme.violet} 1.69%,
+    ${theme.blue} 99.25%
+  );
 `;
 
 export const Button = styled.button`
