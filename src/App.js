@@ -11,6 +11,7 @@ import DrewItem from "Pages/Draw/DrewItem";
 import Find from "Pages/Find/Find";
 import FoundItem from "Pages/Find/FoundItem";
 import Profile from "Pages/Profile/Profile";
+import GlobalStyle from "Styles/globalStyle";
 
 //component
 import Gnb from "Components/Gnb.js/Gnb";
@@ -19,11 +20,12 @@ function App() {
   return (
     <BrowserRouter>
       <ThemeProvider theme={theme}>
+        <GlobalStyle />
         <Gnb />
         <Routes>
-          <Route path="/" element={<Main />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Register />} />
+          <Route path="/" element={<Main />} />
           <Route path="/create" element={<Create />} />
           <Route path="/create/now" element={<CreatedItem />} />
           <Route path="/draw" element={<Draw />} />
