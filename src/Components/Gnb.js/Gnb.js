@@ -6,7 +6,7 @@ import { GnbContainer, Logo, Sidebar, GnbIcon, NavMobileBtn } from "./GnbStyle";
 import { FaBars } from "react-icons/fa";
 import { GrClose } from "react-icons/gr";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Gnb() {
   const navigate = useNavigate();
@@ -42,7 +42,9 @@ export default function Gnb() {
       <GnbContainer>
         <div className="desktop">
           <Logo>
-            <img src="./symbol_logo.png" alt="img" />
+            <Link to="./">
+              <img src="./symbol_logo.png" alt="img" />
+            </Link>
           </Logo>
           <GnbIcon>
             <FaBars size={20} onClick={onSidebar}></FaBars>

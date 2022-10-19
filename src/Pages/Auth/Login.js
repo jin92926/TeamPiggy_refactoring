@@ -18,6 +18,7 @@ import { FaEnvelope, FaLock } from "react-icons/fa";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { useRecoilState } from "recoil";
 import { loginState } from "Atom";
+import Loading from "Components/Loading.js/Loading";
 
 export default function Login() {
   const [loginEmail, setLoginEmail] = useState(""); //id
@@ -29,6 +30,8 @@ export default function Login() {
 
   const [isEmail, setIsEmail] = useState(false);
   const [isPassword, setIsPassword] = useState(false);
+
+  const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
 
@@ -60,6 +63,7 @@ export default function Login() {
   //일반 로그인
   const onSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
     if (isEmail && isPassword) {
       try {
         const auth = await signInWithEmailAndPassword(
@@ -75,6 +79,7 @@ export default function Login() {
           });
         }
         alert("로그인 성공");
+        setLoading(false);
         navigate("/");
       } catch (error) {
         console.log(error);
@@ -95,18 +100,19 @@ export default function Login() {
 
   //소셜 로그인
   const onSubmitSocial = async (event) => {
+    setLoading(true);
     const {
       currentTarget: { name },
     } = event;
     let provider;
     if (name === "google") {
       provider = new GoogleAuthProvider();
-      navigate("/");
     } else if (name === "github") {
       provider = new GithubAuthProvider();
-      navigate("/");
     }
     const data = await signInWithPopup(authService, provider);
+    setLoading(false); // 기다렸다가 처리가 끝나면
+    navigate("/"); // 페이지 이동
     console.log(data.user);
     setAuthState({
       isLogin: true,

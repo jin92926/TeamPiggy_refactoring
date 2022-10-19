@@ -11,6 +11,10 @@ export const AuthContainer = styled(Container)`
   z-index: 1;
   header {
     margin: 30px 0;
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+    }
   }
   .form__auth {
     display: flex;
@@ -27,13 +31,23 @@ export const AuthContainer = styled(Container)`
         padding: 7px 0;
       }
     }
+
     .link {
       margin: 10px 0;
       display: flex;
-      text-align: center;
+      justify-content: center;
       span {
         line-height: 20px;
       }
+      a {
+        span {
+          color: ${theme.blue};
+          font-weight: 600;
+        }
+      }
+    }
+    .error-msg {
+      color: red;
     }
   }
   .button__login {
