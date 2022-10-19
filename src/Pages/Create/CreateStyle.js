@@ -19,7 +19,7 @@ export const CreateBtn = styled(Button)`
   margin-bottom: 30px;
 `;
 
-export const DateWeaterArea = styled.div`
+export const DateWeatherArea = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;

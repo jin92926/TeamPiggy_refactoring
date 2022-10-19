@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "Styles/globalStyle";
 import {
   CreateContainer,
-  DateWeaterArea,
+  DateWeatherArea,
   Title,
   Img,
   Content,
@@ -27,13 +27,13 @@ function DetailItem({ title, date, weather, url, content, type, id }) {
       <CreateContainer>
         <form className="form__create">
           <Title>{title}</Title>
-          <DateWeaterArea>
+          <DateWeatherArea>
             {/* <span>
               {date.toString() === !undefined &&
                 date.toString().toDate().toLocaleString().slice(0, 11)}
             </span> */}
             <span>{weather}</span>
-          </DateWeaterArea>
+          </DateWeatherArea>
           {url && <Img src={url} />}
           <Content isImg={url}>{content}</Content>
 

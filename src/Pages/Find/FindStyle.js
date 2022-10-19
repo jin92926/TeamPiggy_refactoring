@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ListContainer = styled.div``;
 export const ItemContainer = styled.div`
   background-color: #fff;
-  margin: 20px;
+  margin: 15px;
   height: 70px;
   width: 100%;
   color: #6592ec;

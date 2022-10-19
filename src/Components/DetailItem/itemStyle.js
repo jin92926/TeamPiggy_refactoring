@@ -5,8 +5,7 @@ export const CreateContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 410px;
-  height: 70vh;
+
   background: linear-gradient(180.45deg, #f6e7fb 1.69%, #3b6bb7 99.25%);
   .form__create {
     display: flex;
@@ -17,8 +16,7 @@ export const CreateContainer = styled.div`
     background: rgba(255, 255, 255, 0.23);
     border-radius: 10px;
     padding: 30px;
-    height: 50vh;
-    width: 305px;
+    height: 45vh;
   }
   .form__find {
     display: flex;
@@ -29,12 +27,11 @@ export const CreateContainer = styled.div`
     background: rgba(255, 255, 255, 0.23);
     border-radius: 10px;
     padding: 20px 30px;
-    height: 75vh;
     width: 305px;
   }
 `;
 
-export const DateWeaterArea = styled.div`
+export const DateWeatherArea = styled.div`
   display: flex;
   justify-content: space-between;
   > span {

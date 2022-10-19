@@ -6,7 +6,7 @@ import { Container } from "Styles/globalStyle";
 import { CreateContainer } from "../../Components/DetailItem/itemStyle";
 import {
   CreateBtn,
-  DateWeaterArea,
+  DateWeatherArea,
   TitleContentArea,
   FileArea,
   ImgContainer,
@@ -97,7 +97,7 @@ function Create() {
               <input type="file" accept="image/*" onChange={onFileChange} />
               <button onClick={onClearAttachment}>Clear</button>
             </FileArea>
-            <DateWeaterArea>
+            <DateWeatherArea>
               <span>{new Date().toLocaleDateString().slice(0, -1)}</span>
               <input
                 value={weather}
@@ -106,7 +106,7 @@ function Create() {
                 placeholder="날씨는 어때요?"
                 maxLength={8}
               ></input>
-            </DateWeaterArea>
+            </DateWeatherArea>
             <TitleContentArea>
               <input
                 value={title}
