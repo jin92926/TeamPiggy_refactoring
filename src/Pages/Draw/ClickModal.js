@@ -5,18 +5,14 @@ import { dbService } from "../../firebase";
 import Card from "./Card";
 import styled from "styled-components";
 import DetailItem from "Components/DetailItem/DetailItem";
-import { useRecoilValue } from "recoil";
-import { createdObjAtom } from "../../Atom";
+import DrewItem from "./DrewItem";
 
-function DrewItem() {
+const ClickModal = () => {
   const [close, setClose] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
   const openModalHandler = (event) => {
     setIsOpen(!isOpen);
   };
-  console.log(createdObjAtom);
-  const createdObj = useRecoilValue(createdObjAtom);
-  console.log(createdObj);
 
   const clickEvent = (e) => {
     e.stopPropagation();
@@ -30,21 +26,24 @@ function DrewItem() {
   return (
     <>
       <Background>
-        <DivContainer1>
-          <div className="div3">
-            {isOpen === false ? (
-              <Card openModalHandler={openModalHandler} isOpen={isOpen} />
-            ) : (
-              <DetailItem isOpen={isOpen} deleteList={deleteList} />
-            )}
-
-            {/* <DetailItem isOpen={isOpen} deleteList={deleteList} /> */}
-          </div>
-        </DivContainer1>
+        {close === true ? (
+          <DivContainer>
+            <div className="div2">
+              <img
+                src={process.env.PUBLIC_URL + "/piggybank.png"}
+                onClick={clickEvent}
+                alt="title"
+              />
+              <p>저금통을 눌러주세요</p>
+            </div>
+          </DivContainer>
+        ) : (
+          <DrewItem />
+        )}
       </Background>
     </>
   );
-}
+};
 
 const Background = styled.div`
   width: 100vw;
@@ -99,4 +98,5 @@ const DivContainer1 = styled(DivContainer)`
     align-items: center;
   }
 `;
-export default DrewItem;
+
+export default ClickModal;
