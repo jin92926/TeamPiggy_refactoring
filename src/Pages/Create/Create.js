@@ -92,14 +92,16 @@ function Create() {
         <CreateContainer>
           <form className="form__create">
             {attachment ? <ImgContainer src={attachment} /> : <ImgContainer />}
-
             <FileArea>
               <input type="file" accept="image/*" onChange={onFileChange} />
               <button onClick={onClearAttachment}>Clear</button>
             </FileArea>
             <DateWeatherArea>
-              <span>{new Date().toLocaleDateString().slice(0, -1)}</span>
+              <span className="dateWeather">
+                {new Date().toLocaleDateString().slice(0, -1)}
+              </span>
               <input
+                className="dateWeather"
                 value={weather}
                 onChange={onChangeWeather}
                 type="text"

@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import { Container } from "Styles/globalStyle";
 import {
   CreateContainer,
@@ -14,24 +14,24 @@ import { dbService } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 
 function DetailItem({ title, date, weather, url, content, type, id }) {
-  // console.log(typeof date.toString());
   const navigate = useNavigate();
   const deleteList = async (id) => {
     const listDoc = doc(dbService, "서희", id);
     await deleteDoc(listDoc);
-    console.log(id);
   };
 
   return (
     <Container>
       <CreateContainer>
-        <form className="form__create">
+        <form className="form__detail">
           <Title>{title}</Title>
           <DateWeatherArea>
-            {/* <span>
-              {date.toString() === !undefined &&
-                date.toString().toDate().toLocaleString().slice(0, 11)}
-            </span> */}
+            {type === "create" ? (
+              <span>{date.toLocaleString().slice(0, 12)}</span>
+            ) : (
+              <span>{date.toDate().toLocaleString().slice(0, 12)}</span>
+            )}
+
             <span>{weather}</span>
           </DateWeatherArea>
           {url && <Img src={url} />}
@@ -39,7 +39,7 @@ function DetailItem({ title, date, weather, url, content, type, id }) {
 
           {type === "create" ? null : (
             <Delete>
-              {/* <img src="/trash.png" alt="삭제하기" /> */}
+              <img src="/trash.png" alt="삭제하기" />
               <DeleteBtn
                 onClick={() => {
                   deleteList(id);
