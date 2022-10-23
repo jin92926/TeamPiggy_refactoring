@@ -1,13 +1,16 @@
 import styled from "styled-components";
 import theme from "Styles/theme";
 
+export const ListContainer = styled.div`
+  height: 570px;
+  width: 100%;
+`;
 export const ItemContainer = styled.div`
   z-index: 1000;
   background-color: #fff;
-  margin-top: 15px;
+  margin-top: 37px;
   height: 95px;
-  width: 100vw;
-  max-width: 285px;
+  max-width: 100%;
   color: ${theme.blue};
   border-radius: 10px;
   display: flex;
@@ -18,7 +21,7 @@ export const ItemContainer = styled.div`
 
   @media ${({ theme }) => theme.desktop} {
     width: 100%;
-    max-width: 100vw;
+    width: 100vw;
     flex-direction: row;
     justify-content: space-between;
     padding: 7px 4vw;
@@ -29,9 +32,9 @@ export const ItemContainer = styled.div`
 export const ItemTile = styled.div`
   font-size: 20px;
   text-align: center;
+  font-weight: 500;
   @media ${({ theme }) => theme.desktop} {
     font-size: 24px;
-    font-weight: 500;
   }
 `;
 
@@ -47,6 +50,7 @@ export const ItemDate = styled.div`
   background: ${theme.dateWeather};
   border-radius: 20px;
   font-size: 14px;
+  font-weight: 500;
   color: #fff;
   @media ${({ theme }) => theme.desktop} {
     height: 35px;
