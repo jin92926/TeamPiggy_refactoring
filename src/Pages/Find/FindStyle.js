@@ -55,8 +55,8 @@ export const ItemDate = styled.div`
   @media ${({ theme }) => theme.desktop} {
     height: 35px;
     width: 22%;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 1.1vw;
+    font-weight: 600;
     margin-top: 0px;
   }
 `;

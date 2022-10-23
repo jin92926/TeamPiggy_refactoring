@@ -6,7 +6,7 @@ export const CreateContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 390px;
+  width: 460px;
   @media ${({ theme }) => theme.desktop} {
     padding: 30px;
   }
