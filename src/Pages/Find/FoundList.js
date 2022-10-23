@@ -21,7 +21,7 @@ function FoundList() {
   const offset = (page - 1) * limit;
 
   useEffect(() => {
-    const q = query(collection(dbService, "서희"));
+    const q = query(collection(dbService, "서희"), orderBy("날짜", "desc"));
     onSnapshot(q, (snapshot) => {
       const arr = snapshot.docs.map((doc) => ({
         id: doc.id,
@@ -42,7 +42,7 @@ function FoundList() {
           <ItemContainer key={el.id} onClick={() => selecteHandler(el.id)}>
             <ItemTile>{el.제목}</ItemTile>
             <ItemDate>
-              {el.날짜.toDate().toLocaleDateString().slice(0, 11)}
+              {el.날짜.toDate().toLocaleDateString().slice(0, 12)}
             </ItemDate>
           </ItemContainer>
         ))}
