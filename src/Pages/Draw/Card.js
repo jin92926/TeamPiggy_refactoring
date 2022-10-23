@@ -8,6 +8,8 @@ import {
   Image,
   Wrap,
 } from "./DrawStyle";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const items = [
   { id: 1, url: "/wedding-invitation.png" },
@@ -18,11 +20,14 @@ const items = [
   { id: 6, url: "/wedding-invitation.png" },
 ];
 
-function Card({ openModalHandler, title }) {
+function Card() {
+  const [isOpen, setIsOpen] = useState(false);
   let navigate = useNavigate();
-  console.log(title);
+
   const clickNavigate = () => {
-    navigate(`/draw/${title}`);
+    setIsOpen(true);
+    navigate(`/draw/11`);
+    console.log("눌림?");
   };
 
   const settings = {
@@ -56,7 +61,7 @@ function Card({ openModalHandler, title }) {
           return (
             <Wrap key="index">
               <ImageContainer>
-                <Image src={item.url} onClick={openModalHandler} />
+                <Image src={item.url} onClick={() => clickNavigate()} />
               </ImageContainer>
             </Wrap>
           );

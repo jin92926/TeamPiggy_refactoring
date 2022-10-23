@@ -34,6 +34,7 @@ function FoundList() {
   const selecteHandler = (id) => {
     navigate(`/find/${id}`);
   };
+  console.log(happyArr);
 
   return (
     <>
