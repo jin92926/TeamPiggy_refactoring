@@ -1,46 +1,62 @@
-import { useState } from "react";
-import { doc, deleteDoc } from "firebase/firestore";
-import { dbService } from "../../firebase";
-
-import Card from "./Card";
+import { useState, React, useEffect } from "react";
 import DetailItem from "Components/DetailItem/DetailItem";
 import { useRecoilValue } from "recoil";
-import { createdObjAtom } from "../../Atom";
-import { DivContainer1 } from "./DrawStyle";
-import { useNavigate } from "react-router";
+
+import {
+  doc,
+  collection,
+  onSnapshot,
+  query,
+  orderBy,
+  where,
+  deleteDoc,
+} from "firebase/firestore";
+import { dbService } from "../../firebase";
+import { loginState } from "Atom";
 
 function DrewItem() {
-  const [isOpen, setIsOpen] = useState(false);
-  const createdObj = useRecoilValue(createdObjAtom);
-  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(true);
+  const [happy, setHappy] = useState();
+  const userInfo = useRecoilValue(loginState);
+  const url = window.location.href;
+  const selectedId = url.slice(url.lastIndexOf("/") + 1);
 
-  const openModalHandler = (e) => {
-    e.stopPropagation();
-    navigate(`/draw/${createdObj.제목}`);
-    setIsOpen(!isOpen);
-  };
+  console.log(selectedId);
+  useEffect(() => {
+    const q = query(
+      collection(dbService, userInfo.userName),
+      orderBy("날짜", "desc")
+    );
+    onSnapshot(q, (snapshot) => {
+      const arr = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      arr.map((randomHappy) => {
+        if (randomHappy.id === selectedId) {
+          setHappy(randomHappy);
+          setIsLoading(false);
+        }
+      });
+    });
+  }, []);
 
-  console.log(createdObj.제목);
+  console.log(happy);
 
-  // { title, date, weather, url, content, type, id }
   return (
     <>
-      <DivContainer1>
-        <div className="div3">
-          {isOpen === false ? (
-            <Card openModalHandler={openModalHandler} title={createdObj.제목} />
-          ) : (
-            <DetailItem
-              title={createdObj.제목}
-              date={createdObj.날짜}
-              weather={createdObj.날씨}
-              url={createdObj.url}
-              content={createdObj.내용}
-              type="draw"
-            />
-          )}
-        </div>
-      </DivContainer1>
+      {isLoading === true ? (
+        <div>로딩중</div>
+      ) : (
+        <DetailItem
+          title={happy.제목}
+          date={happy.날짜}
+          weather={happy.날씨}
+          url={happy.url}
+          content={happy.내용}
+          type="draw"
+        />
+      )}
     </>
   );
 }

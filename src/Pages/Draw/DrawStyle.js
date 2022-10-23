@@ -5,6 +5,7 @@ import Slider from "react-slick";
 export const Container = styled.div`
   width: 100vw;
   height: 100vh;
+  background: linear-gradient(17.56deg, #f6e7fb 0%, #3b6bb7 100%);
   overflow: hidden;
   display: flex;
   flex-direction: column;
