@@ -16,11 +16,11 @@ export const CreateContainer = styled.div`
   }
   .form__find {
     padding: 30px 30px 20px 30px;
-    height: 680px;
+    height: 70vh;
   }
   .form__detail {
     padding: 30px;
-    height: 680px;
+    height: 70vh;
   }
   .form__create,
   .form__find,
@@ -82,7 +82,7 @@ export const Title = styled.div`
 
 export const Img = styled.img`
   object-fit: scale-down;
-  height: 230px;
+  height: 25vh;
   border: none;
   width: 285px;
 `;
@@ -92,7 +92,7 @@ export const Content = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: ${(props) => (props.isImg ? "210px" : "65%")};
+  height: ${(props) => (props.isImg ? "15vh" : "65%")};
   background: #ffff;
   border-radius: 10px;
   color: black;
