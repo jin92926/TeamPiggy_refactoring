@@ -2,7 +2,14 @@ import { useNavigate } from "react-router";
 import { authService } from "../../firebase";
 import { useRecoilState } from "recoil";
 import { loginState } from "Atom";
-import { GnbContainer, Logo, Sidebar, GnbIcon, NavMobileBtn } from "./GnbStyle";
+import {
+  GnbContainer,
+  Logo,
+  Sidebar,
+  GnbIcon,
+  NavMobileBtn,
+  LogoutBtn,
+} from "./GnbStyle";
 import { FaBars } from "react-icons/fa";
 import { GrClose } from "react-icons/gr";
 import { useState } from "react";
@@ -20,6 +27,7 @@ export default function Gnb() {
   };
 
   const onSubmit = (event) => {
+    setIsSidebar(false);
     const {
       target: { name, value },
     } = event;
@@ -112,9 +120,9 @@ export default function Gnb() {
           </GnbIcon>
           <div className="userinfo">
             <span>{authState.userName}</span>
-            <button type="submit" name={loginText} onClick={onSubmit}>
+            <LogoutBtn type="submit" name={loginText} onClick={onSubmit}>
               {loginText}
-            </button>
+            </LogoutBtn>
           </div>
           <nav className="nav-desktop">
             <ul>

@@ -13,6 +13,7 @@ import {
   where,
   deleteDoc,
 } from "firebase/firestore";
+import { LogoutBtn } from "Components/Gnb.js/GnbStyle";
 
 function Profile() {
   const navigate = useNavigate();
@@ -34,8 +35,8 @@ function Profile() {
 
   useEffect(() => {
     const q = query(
-      collection(dbService, "happy"),
-      where("작성자", "==", username)
+      collection(dbService, loginInfo.userName),
+      orderBy("날짜", "desc")
     );
     onSnapshot(q, (snapshot) => {
       const happyArr = snapshot.docs.map((doc) => ({
@@ -54,9 +55,9 @@ function Profile() {
         <p>이름: {username}</p>
         <p>내 행복 무게: {profile.length} kg</p>
       </div>
-      <button type="submit" onClick={onSubmit}>
+      <LogoutBtn type="submit" onClick={onSubmit}>
         LOGOUT
-      </button>
+      </LogoutBtn>
     </ProfileContainer>
   );
 }

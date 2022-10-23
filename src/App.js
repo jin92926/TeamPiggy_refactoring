@@ -1,6 +1,6 @@
 import { ThemeProvider } from "styled-components";
 import theme from "Styles/theme";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Main from "Pages/Main/Main";
 import Login from "Pages/Auth/Login";
 import Register from "Pages/Auth/Register";
@@ -15,16 +15,26 @@ import GlobalStyle from "Styles/globalStyle";
 
 //component
 import Gnb from "Components/Gnb.js/Gnb";
+import { useRecoilValue } from "recoil";
+import { loginState } from "Atom";
 
 function App() {
+  const isLogin = useRecoilValue(loginState);
+  console.log(isLogin);
   return (
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Gnb />
         <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Register />} />
+          <Route
+            path="/login"
+            element={isLogin === true ? <Navigate to="/" /> : <Login />}
+          />
+          <Route
+            path="/signup"
+            element={isLogin ? <Navigate to="/" /> : <Register />}
+          />
           <Route path="/" element={<Main />} />
           <Route path="/create" element={<Create />} />
           <Route path="/create/now" element={<CreatedItem />} />
