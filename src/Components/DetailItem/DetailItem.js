@@ -24,6 +24,7 @@ function DetailItem({ title, date, weather, url, content, type, id }) {
     await deleteDoc(listDoc);
   };
 
+  console.log(date);
   return (
     <Container>
       <CreateContainer>

@@ -8,6 +8,21 @@ import {
   Image,
   Wrap,
 } from "./DrawStyle";
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+
+import {
+  doc,
+  collection,
+  onSnapshot,
+  query,
+  orderBy,
+  where,
+  deleteDoc,
+} from "firebase/firestore";
+import { dbService } from "../../firebase";
+import { useRecoilValue } from "recoil";
+import { loginState } from "Atom";
 
 const items = [
   { id: 1, url: "/wedding-invitation.png" },
@@ -18,11 +33,30 @@ const items = [
   { id: 6, url: "/wedding-invitation.png" },
 ];
 
-function Card({ openModalHandler, title }) {
+function Card() {
+  const [isOpen, setIsOpen] = useState(false);
+  const userInfo = useRecoilValue(loginState);
   let navigate = useNavigate();
-  console.log(title);
+  const [happyArr, setHappyArr] = useState([]);
+  useEffect(() => {
+    const q = query(
+      collection(dbService, userInfo.userName),
+      orderBy("날짜", "desc")
+    );
+    onSnapshot(q, (snapshot) => {
+      const arr = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setHappyArr(arr);
+    });
+  }, []);
+
+  const randomHappy = happyArr[Math.floor(Math.random() * happyArr.length)];
+
   const clickNavigate = () => {
-    navigate(`/draw/${title}`);
+    setIsOpen(true);
+    navigate(`/draw/${randomHappy.id}`);
   };
 
   const settings = {
@@ -56,7 +90,7 @@ function Card({ openModalHandler, title }) {
           return (
             <Wrap key="index">
               <ImageContainer>
-                <Image src={item.url} onClick={openModalHandler} />
+                <Image src={item.url} onClick={() => clickNavigate()} />
               </ImageContainer>
             </Wrap>
           );
