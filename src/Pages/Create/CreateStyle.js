@@ -63,7 +63,11 @@ export const FileArea = styled.div`
 export const ImgContainer = styled.img`
   object-fit: scale-down;
   width: 100%;
-  height: 220px;
+  min-height: 150px;
+  height: 24vh;
+  img {
+    height: 100%;
+  }
 `;
 
 export const TitleContentArea = styled.div`
@@ -83,7 +87,7 @@ export const TitleContentArea = styled.div`
   }
   textArea {
     width: 100%;
-    height: 170px;
+    height: 15vh;
     padding: 5px;
     @media ${({ theme }) => theme.desktop} {
       font-size: 15px;
