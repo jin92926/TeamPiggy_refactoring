@@ -3,15 +3,18 @@ import { React, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
 import { dbService } from "../../firebase";
+import { loginState } from "Atom";
+import { useRecoilValue } from "recoil";
 
 const FoundItem = () => {
   const { id } = useParams();
   const [foundObj, setFoundObj] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const userInfo = useRecoilValue(loginState);
 
   useEffect(() => {
     const get = async () => {
-      const docRef = doc(dbService, "서희", id);
+      const docRef = doc(dbService, userInfo.userName, id);
       const docSnap = await getDoc(docRef);
       if (docSnap.data) {
         setFoundObj(docSnap.data());

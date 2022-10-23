@@ -64,6 +64,7 @@ export const Sidebar = styled.div`
   border: 1px solid ${theme.border};
   position: absolute;
   right: 0;
+  z-index: 1001;
   .userinfo {
     width: 100%;
     height: 100px;

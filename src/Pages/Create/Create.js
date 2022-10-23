@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useSetRecoilState } from "recoil";
-import { createdObjAtom } from "../../Atom";
+import { useSetRecoilState, useRecoilValue } from "recoil";
+import { createdObjAtom, loginState } from "../../Atom";
 import { Container } from "Styles/globalStyle";
 import { CreateContainer } from "../../Components/DetailItem/itemStyle";
 import {
@@ -23,6 +23,8 @@ function Create() {
   const [text, setText] = useState("");
   const [attachment, setAttachment] = useState("");
   const setNewHappy = useSetRecoilState(createdObjAtom);
+  const userInfo = useRecoilValue(loginState);
+
   const navigate = useNavigate();
   const onFileChange = (event) => {
     // 이미지 파일 보여주기 위해
@@ -78,12 +80,16 @@ function Create() {
     console.log(submitHappy);
     setNewHappy(submitHappy);
 
-    await addDoc(collection(dbService, "서희"), submitHappy); //컬렉션 이름을 사용자 이름으로/작성자 uuid
-    setTitle("");
-    setWeather("");
-    setText("");
+    if (submitHappy.제목.length < 2 || submitHappy.내용.length < 2) {
+      alert("제목과 내용을 입력해주세요");
+    } else {
+      await addDoc(collection(dbService, userInfo.userName), submitHappy);
+      setTitle("");
+      setWeather("");
+      setText("");
 
-    navigate("/create/now");
+      navigate("/create/now");
+    }
   };
 
   return (
