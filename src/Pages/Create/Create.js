@@ -122,7 +122,7 @@ function Create() {
                 type="text"
                 placeholder="제목"
                 required
-                maxLength={13}
+                maxLength={50}
               />
               <textarea
                 value={text}
