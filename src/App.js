@@ -20,7 +20,7 @@ import { loginState } from "Atom";
 
 function App() {
   const isLogin = useRecoilValue(loginState);
-  // console.log(isLogin);
+  console.log(isLogin);
   return (
     <BrowserRouter>
       <ThemeProvider theme={theme}>
@@ -29,7 +29,7 @@ function App() {
         <Routes>
           <Route
             path="/login"
-            element={isLogin ? <Navigate to="/" /> : <Login />}
+            element={isLogin === true ? <Navigate to="/" /> : <Login />}
           />
           <Route
             path="/signup"
