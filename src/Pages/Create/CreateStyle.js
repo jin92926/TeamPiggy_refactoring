@@ -14,7 +14,7 @@ export const CreateBtn = styled(Button)`
   border-radius: 10px;
   font-size: 25px;
   font-weight: 500;
-  margin-top: 40px;
+  margin-top: 4vh;
   z-index: 1000;
   :hover {
     background: ${theme.white};
@@ -33,7 +33,7 @@ export const DateWeatherArea = styled.div`
   width: 100%;
   > span {
     color: #ffff;
-    padding-top: 8px;
+    padding-top: 0.9vh;
   }
   > input {
     content: attr(placeholder);
@@ -46,7 +46,9 @@ export const DateWeatherArea = styled.div`
   .dateWeather {
     background-color: ${theme.detailTitle};
     width: 47%;
-    height: 35px;
+    height: 4vh;
+    min-height: 20px;
+    max-height: 35px;
     text-align: center;
     border-radius: 20px;
     font-size: 15px;
@@ -63,8 +65,8 @@ export const FileArea = styled.div`
 export const ImgContainer = styled.img`
   object-fit: scale-down;
   width: 100%;
-  min-height: 150px;
-  height: 24vh;
+  min-height: 140px;
+  height: 25vh;
   img {
     height: 100%;
   }
@@ -77,7 +79,8 @@ export const TitleContentArea = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 30px;
+    max-height: 30px;
+    height: 4vh;
     margin-bottom: 2px;
     padding: 5px;
     @media ${({ theme }) => theme.desktop} {
@@ -87,10 +90,11 @@ export const TitleContentArea = styled.div`
   }
   textArea {
     width: 100%;
-    height: 15vh;
+    height: 12vh;
     padding: 5px;
     @media ${({ theme }) => theme.desktop} {
       font-size: 15px;
+      height: 15vh;
     }
   }
 `;

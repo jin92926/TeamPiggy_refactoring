@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import theme from "Styles/theme";
 function Pagination({ total, limit, page, setPage }) {
   const numPages = Math.ceil(total / limit);
 
@@ -34,7 +34,10 @@ const Nav = styled.nav`
   align-items: center;
   /* position: fixed; */
   gap: 4px;
-  margin: 16px;
+  margin-bottom: 1vh;
+  @media ${({ theme }) => theme.desktop} {
+    margin-bottom: 30px;
+  }
 `;
 
 const Button = styled.button`
