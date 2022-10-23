@@ -1,6 +1,5 @@
 import { useState } from "react";
 import ClickModal from "./ClickModal";
-import DrewItem from "./DrewItem";
 import Card from "./Card";
 
 function Draw() {

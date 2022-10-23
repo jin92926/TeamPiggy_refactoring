@@ -8,18 +8,8 @@ import {
   Image,
   Wrap,
 } from "./DrawStyle";
-import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-
-import {
-  doc,
-  collection,
-  onSnapshot,
-  query,
-  orderBy,
-  where,
-  deleteDoc,
-} from "firebase/firestore";
+import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
 import { dbService } from "../../firebase";
 import { useRecoilValue } from "recoil";
 import { loginState } from "Atom";
@@ -61,7 +51,7 @@ function Card() {
 
   const settings = {
     infinite: true,
-    // speed: 500,
+    speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: true,

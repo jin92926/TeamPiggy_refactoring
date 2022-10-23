@@ -8,8 +8,8 @@ export const ListContainer = styled.div`
 export const ItemContainer = styled.div`
   z-index: 1000;
   background-color: #fff;
-  margin-top: 37px;
-  height: 95px;
+  margin-top: 2.5vh;
+  height: 11vh;
   max-width: 100%;
   color: ${theme.blue};
   border-radius: 10px;
@@ -20,12 +20,12 @@ export const ItemContainer = styled.div`
   padding: 7px 0px;
 
   @media ${({ theme }) => theme.desktop} {
-    width: 100%;
-    width: 100vw;
     flex-direction: row;
     justify-content: space-between;
     padding: 7px 4vw;
-    height: 100px;
+    height: 11vh;
+    max-height: 95px;
+    margin-bottom: 3.5vh;
   }
 `;
 
