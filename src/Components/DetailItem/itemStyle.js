@@ -6,6 +6,7 @@ export const CreateContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 460px;
   @media ${({ theme }) => theme.desktop} {
     padding: 30px;
   }
@@ -24,7 +25,7 @@ export const CreateContainer = styled.div`
   .form__create,
   .form__find,
   .form__detail {
-    width: 110%;
+    width: 90%;
     background: ${theme.modalBackground};
     border-radius: 10px;
     display: flex;
@@ -119,4 +120,5 @@ export const DeleteBtn = styled.span`
   border: 0;
   outline: 0;
   color: white;
+  cursor: pointer;
 `;

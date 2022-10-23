@@ -81,7 +81,7 @@ function Create() {
     setNewHappy(submitHappy);
 
     if (submitHappy.제목.length < 2 || submitHappy.내용.length < 2) {
-      alert("제목과 내용을 입력해주세요");
+      alert("제목과 내용을 두 글자 이상 입력해주세요");
     } else {
       await addDoc(collection(dbService, userInfo.userName), submitHappy);
       setTitle("");
@@ -122,7 +122,7 @@ function Create() {
                 type="text"
                 placeholder="제목"
                 required
-                maxLength={13}
+                maxLength={50}
               />
               <textarea
                 value={text}

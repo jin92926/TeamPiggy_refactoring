@@ -1,15 +1,7 @@
 import { useEffect, useState } from "react";
-import {
-  doc,
-  collection,
-  onSnapshot,
-  query,
-  orderBy,
-  where,
-  deleteDoc,
-} from "firebase/firestore";
+import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
 import { dbService } from "../../firebase";
-import { ItemContainer, ItemTile, ItemDate } from "./FindStyle";
+import { ItemContainer, ItemTile, ItemDate, ListContainer } from "./FindStyle";
 import { useNavigate } from "react-router-dom";
 import Pagination from "./Pagination";
 import { loginState } from "Atom";
@@ -45,19 +37,22 @@ function FoundList() {
 
   return (
     <>
-      {happyArr &&
-        (happyArr.length < 1 ? (
-          <NoHappy />
-        ) : (
-          happyArr.slice(offset, offset + limit).map((el) => (
-            <ItemContainer key={el.id} onClick={() => selecteHandler(el.id)}>
-              <ItemTile>{el.제목}</ItemTile>
-              <ItemDate>
-                {el.날짜.toDate().toLocaleDateString().slice(0, 12)}
-              </ItemDate>
-            </ItemContainer>
-          ))
-        ))}
+      <ListContainer>
+        {happyArr &&
+          (happyArr.length < 1 ? (
+            <NoHappy />
+          ) : (
+            happyArr.slice(offset, offset + limit).map((el) => (
+              <ItemContainer key={el.id} onClick={() => selecteHandler(el.id)}>
+                <ItemTile>{el.제목}</ItemTile>
+                <ItemDate>
+                  {el.날짜.toDate().toLocaleDateString().slice(0, 12)}
+                </ItemDate>
+              </ItemContainer>
+            ))
+          ))}
+      </ListContainer>
+
       {happyArr && happyArr.length >= 1 && (
         <footer>
           <Pagination

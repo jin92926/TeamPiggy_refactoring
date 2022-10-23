@@ -6,20 +6,23 @@ export const CreateBtn = styled(Button)`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 110%;
+  width: 90%;
   padding: 5%;
   max-height: 61px;
   background: ${theme.violet};
-  //rgba(246, 231, 251, 0.65)
-  border-radius: 10px;
   color: ${theme.blue};
+  border-radius: 10px;
   font-size: 25px;
   font-weight: 500;
   margin-top: 40px;
   z-index: 1000;
+  :hover {
+    background: ${theme.white};
+    color: ${theme.blue};
+  }
   @media ${({ theme }) => theme.desktop} {
     max-width: 1140px;
-    width: 100%;
+    width: 90vw;
     padding: 3%;
   }
 `;
@@ -60,7 +63,11 @@ export const FileArea = styled.div`
 export const ImgContainer = styled.img`
   object-fit: scale-down;
   width: 100%;
-  height: 220px;
+  min-height: 150px;
+  height: 24vh;
+  img {
+    height: 100%;
+  }
 `;
 
 export const TitleContentArea = styled.div`
@@ -80,7 +87,7 @@ export const TitleContentArea = styled.div`
   }
   textArea {
     width: 100%;
-    height: 170px;
+    height: 15vh;
     padding: 5px;
     @media ${({ theme }) => theme.desktop} {
       font-size: 15px;
