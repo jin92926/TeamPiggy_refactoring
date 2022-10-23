@@ -37,6 +37,7 @@ export const CreateContainer = styled.div`
       max-width: 1140px;
       width: 100vw;
       margin-top: 70px;
+      //       margin: 70px 30px 0px 30px;
     }
   }
 `;
