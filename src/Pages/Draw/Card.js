@@ -9,7 +9,20 @@ import {
   Wrap,
 } from "./DrawStyle";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+import {
+  doc,
+  collection,
+  onSnapshot,
+  query,
+  orderBy,
+  where,
+  deleteDoc,
+} from "firebase/firestore";
+import { dbService } from "../../firebase";
+import { useRecoilValue } from "recoil";
+import { loginState } from "Atom";
 
 const items = [
   { id: 1, url: "/wedding-invitation.png" },
@@ -22,12 +35,28 @@ const items = [
 
 function Card() {
   const [isOpen, setIsOpen] = useState(false);
+  const userInfo = useRecoilValue(loginState);
   let navigate = useNavigate();
+  const [happyArr, setHappyArr] = useState([]);
+  useEffect(() => {
+    const q = query(
+      collection(dbService, userInfo.userName),
+      orderBy("날짜", "desc")
+    );
+    onSnapshot(q, (snapshot) => {
+      const arr = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setHappyArr(arr);
+    });
+  }, []);
+
+  const randomHappy = happyArr[Math.floor(Math.random() * happyArr.length)];
 
   const clickNavigate = () => {
     setIsOpen(true);
-    navigate(`/draw/11`);
-    console.log("눌림?");
+    navigate(`/draw/${randomHappy.id}`);
   };
 
   const settings = {

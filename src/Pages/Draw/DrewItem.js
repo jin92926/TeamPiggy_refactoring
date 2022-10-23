@@ -1,12 +1,7 @@
 import { useState, React, useEffect } from "react";
-
-import Card from "./Card";
 import DetailItem from "Components/DetailItem/DetailItem";
 import { useRecoilValue } from "recoil";
-import { createdObjAtom } from "../../Atom";
-import { DivContainer1 } from "./DrawStyle";
-import { useNavigate } from "react-router";
-//
+
 import {
   doc,
   collection,
@@ -17,60 +12,50 @@ import {
   deleteDoc,
 } from "firebase/firestore";
 import { dbService } from "../../firebase";
-import { Link } from "react-router-dom";
+import { loginState } from "Atom";
 
 function DrewItem() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [happyArr, setHappyArr] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [happy, setHappy] = useState();
+  const userInfo = useRecoilValue(loginState);
+  const url = window.location.href;
+  const selectedId = url.slice(url.lastIndexOf("/") + 1);
 
+  console.log(selectedId);
   useEffect(() => {
-    const q = query(collection(dbService, "서희"), orderBy("날짜", "desc"));
+    const q = query(
+      collection(dbService, userInfo.userName),
+      orderBy("날짜", "desc")
+    );
     onSnapshot(q, (snapshot) => {
       const arr = snapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
       }));
-      setHappyArr(arr);
+      arr.map((randomHappy) => {
+        if (randomHappy.id === selectedId) {
+          setHappy(randomHappy);
+          setIsLoading(false);
+        }
+      });
     });
   }, []);
 
-  const randomHappy = happyArr[Math.floor(Math.random() * happyArr.length)];
-  console.log(randomHappy);
-  const navigate = useNavigate();
-
-  // const openModalHandler = (e) => {
-  //   e.stopPropagation();
-  //   navigate(`/draw/${randomHappy.id}`);
-  //   setIsOpen(!isOpen);
-  // };
-  // console.log(randomHappy);
-
-  // { title, date, weather, url, content, type, id }
-  if (isOpen === true) {
-    console.log("트루입니다");
-  }
+  console.log(happy);
 
   return (
     <>
-      {randomHappy === undefined ? (
+      {isLoading === true ? (
         <div>로딩중</div>
       ) : (
-        <DivContainer1>
-          <div className="div3">
-            {isOpen === false ? (
-              <Card setIsOpen={setIsOpen} title={randomHappy.id} />
-            ) : (
-              <DetailItem
-                title={randomHappy.제목}
-                date={randomHappy.날짜}
-                weather={randomHappy.날씨}
-                url={randomHappy.url}
-                content={randomHappy.내용}
-                type="draw"
-              />
-            )}
-          </div>
-        </DivContainer1>
+        <DetailItem
+          title={happy.제목}
+          date={happy.날짜}
+          weather={happy.날씨}
+          url={happy.url}
+          content={happy.내용}
+          type="draw"
+        />
       )}
     </>
   );
