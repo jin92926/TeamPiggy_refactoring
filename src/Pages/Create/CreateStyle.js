@@ -16,6 +16,7 @@ export const CreateBtn = styled(Button)`
   font-size: 25px;
   font-weight: 500;
   margin-top: 40px;
+  z-index: 1000;
   @media ${({ theme }) => theme.desktop} {
     max-width: 1140px;
     width: 100%;

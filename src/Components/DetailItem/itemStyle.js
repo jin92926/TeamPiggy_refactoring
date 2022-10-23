@@ -5,11 +5,10 @@ export const CreateContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
   justify-content: center;
-  height: 100%;
-  z-index: 1000;
-
+  @media ${({ theme }) => theme.desktop} {
+    padding: 30px;
+  }
   .form__create {
     padding: 30px;
     height: 60vh;
@@ -32,11 +31,12 @@ export const CreateContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-
+    z-index: 1000;
     @media ${({ theme }) => theme.desktop} {
+      width: 90vw;
       max-width: 1140px;
-      width: 100vw;
       margin-top: 70px;
+      //       margin: 70px 30px 0px 30px;
     }
   }
 `;
@@ -52,11 +52,12 @@ export const DateWeatherArea = styled.div`
     height: 27px;
     background: ${theme.dateWeather};
     border-radius: 20px;
-    padding-top: 9px;
+    padding-top: 6px;
     font-size: 15px;
     font-weight: 500;
     @media ${({ theme }) => theme.desktop} {
       height: 35px;
+      padding-top: 9px;
     }
   }
 `;
@@ -100,7 +101,7 @@ export const Content = styled.div`
 `;
 
 export const Delete = styled.div`
-  width: 285px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;

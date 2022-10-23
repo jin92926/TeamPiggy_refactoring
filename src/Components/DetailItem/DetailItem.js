@@ -1,5 +1,7 @@
 import { React, useState } from "react";
 import { Container } from "Styles/globalStyle";
+import { loginState } from "Atom";
+import { useRecoilValue } from "recoil";
 import {
   CreateContainer,
   DateWeatherArea,
@@ -15,8 +17,10 @@ import { useNavigate } from "react-router-dom";
 
 function DetailItem({ title, date, weather, url, content, type, id }) {
   const navigate = useNavigate();
+  const userInfo = useRecoilValue(loginState);
+
   const deleteList = async (id) => {
-    const listDoc = doc(dbService, "서희", id);
+    const listDoc = doc(dbService, userInfo.userName, id);
     await deleteDoc(listDoc);
   };
 

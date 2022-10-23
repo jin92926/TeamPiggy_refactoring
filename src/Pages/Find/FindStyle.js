@@ -40,6 +40,7 @@ export const ItemDate = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 3px;
+  padding-bottom: 2px;
   width: 70%;
   height: 25px;
   text-align: center;
@@ -52,5 +53,6 @@ export const ItemDate = styled.div`
     width: 22%;
     font-size: 18px;
     font-weight: 500;
+    margin-top: 0px;
   }
 `;
