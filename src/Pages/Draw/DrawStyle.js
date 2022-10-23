@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Slider from "react-slick";
 
-// card
 export const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -56,6 +55,7 @@ export const DivContainer = styled.div`
     justify-content: center;
     font-size: 20px;
     animation: blink-effect 2s linear 1;
+    color: white;
 
     > img {
       width: 219.65px;

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { DivContainer } from "./DrawStyle";
 
 const ClickModal = ({ clickEvent }) => {
@@ -6,7 +5,7 @@ const ClickModal = ({ clickEvent }) => {
     <DivContainer>
       <div className="div2">
         <img
-          src={process.env.PUBLIC_URL + "/piggybank.png"}
+          src={process.env.PUBLIC_URL + "/mainpig.png"}
           onClick={clickEvent}
           alt="title"
         />

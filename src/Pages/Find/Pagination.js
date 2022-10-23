@@ -2,29 +2,41 @@ import styled from "styled-components";
 import theme from "Styles/theme";
 function Pagination({ total, limit, page, setPage }) {
   const numPages = Math.ceil(total / limit);
+  const buttonClick = (e, i) => {
+    e.preventDefault();
+    setPage(i + 1);
+  };
+
+  const prevClick = (e, i) => {
+    e.preventDefault();
+    setPage(page - i);
+  };
+
+  const nextClick = (e, i) => {
+    e.preventDefault();
+    setPage(page + i);
+  };
 
   return (
-    <>
-      <Nav>
-        <Button onClick={() => setPage(page - 1)} disabled={page === 1}>
-          &lt;
-        </Button>
-        {Array(numPages)
-          .fill()
-          .map((_, i) => (
-            <Button
-              key={i + 1}
-              onClick={() => setPage(i + 1)}
-              aria-current={page === i + 1 ? "page" : null}
-            >
-              {i + 1}
-            </Button>
-          ))}
-        <Button onClick={() => setPage(page + 1)} disabled={page === numPages}>
-          &gt;
-        </Button>
-      </Nav>
-    </>
+    <Nav>
+      <Button onClick={(e) => prevClick(e, 1)} disabled={page === 1}>
+        &lt;
+      </Button>
+      {Array(numPages)
+        .fill()
+        .map((_, i) => (
+          <Button
+            key={i + 1}
+            onClick={(e) => buttonClick(e, i)}
+            aria-current={page === i + 1 ? "page" : null}
+          >
+            {i + 1}
+          </Button>
+        ))}
+      <Button onClick={(e) => nextClick(e, 1)} disabled={page === numPages}>
+        &gt;
+      </Button>
+    </Nav>
   );
 }
 
