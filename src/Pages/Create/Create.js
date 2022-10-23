@@ -6,7 +6,7 @@ import { Container } from "Styles/globalStyle";
 import { CreateContainer } from "../../Components/DetailItem/itemStyle";
 import {
   CreateBtn,
-  DateWeaterArea,
+  DateWeatherArea,
   TitleContentArea,
   FileArea,
   ImgContainer,
@@ -92,21 +92,23 @@ function Create() {
         <CreateContainer>
           <form className="form__create">
             {attachment ? <ImgContainer src={attachment} /> : <ImgContainer />}
-
             <FileArea>
               <input type="file" accept="image/*" onChange={onFileChange} />
               <button onClick={onClearAttachment}>Clear</button>
             </FileArea>
-            <DateWeaterArea>
-              <span>{new Date().toLocaleDateString().slice(0, -1)}</span>
+            <DateWeatherArea>
+              <span className="dateWeather">
+                {new Date().toLocaleDateString().slice(0, -1)}
+              </span>
               <input
+                className="dateWeather"
                 value={weather}
                 onChange={onChangeWeather}
                 type="text"
                 placeholder="날씨는 어때요?"
                 maxLength={8}
               ></input>
-            </DateWeaterArea>
+            </DateWeatherArea>
             <TitleContentArea>
               <input
                 value={title}

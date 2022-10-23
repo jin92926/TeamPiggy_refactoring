@@ -1,61 +1,65 @@
 import styled from "styled-components";
 import { Button } from "Styles/globalStyle";
+import theme from "Styles/theme";
 
 export const CreateBtn = styled(Button)`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
+  width: 110%;
   padding: 5%;
-  max-width: 340px;
   max-height: 61px;
-  background: rgba(246, 231, 251, 0.65);
+  background: ${theme.violet};
+  //rgba(246, 231, 251, 0.65)
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #fff;
+  color: ${theme.blue};
   font-size: 25px;
   font-weight: 500;
-  margin-bottom: 30px;
+  margin-top: 40px;
+  @media ${({ theme }) => theme.desktop} {
+    max-width: 1140px;
+    width: 100%;
+    padding: 3%;
+  }
 `;
 
-export const DateWeaterArea = styled.div`
+export const DateWeatherArea = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
   > span {
-    text-align: center;
     color: #ffff;
-    width: 143px;
-    height: 21px;
-    background-color: rgba(101, 146, 236, 0.6);
-    border-radius: 20px;
-    padding-top: 5px;
-    font-size: 14px;
+    padding-top: 8px;
   }
   > input {
     content: attr(placeholder);
-    background-color: rgba(101, 146, 236, 0.6);
-    border-radius: 20px;
     border-color: #ffff;
-    width: 143px;
-    height: 22px;
     border: none;
-    text-align: center;
-    padding-top: 3px;
     &::placeholder {
       color: #ffff;
     }
   }
+  .dateWeather {
+    background-color: ${theme.detailTitle};
+    width: 47%;
+    height: 35px;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 500;
+  }
 `;
 
-export const FileArea = styled.div``;
+export const FileArea = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+`;
 
 export const ImgContainer = styled.img`
   object-fit: scale-down;
-  width: 299px;
+  width: 100%;
   height: 220px;
-  border: 1px solid #fcf6f5;
 `;
 
 export const TitleContentArea = styled.div`
@@ -64,12 +68,21 @@ export const TitleContentArea = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 97.2%;
-    height: 20px;
+    width: 100%;
+    height: 30px;
     margin-bottom: 2px;
+    padding: 5px;
+    @media ${({ theme }) => theme.desktop} {
+      font-size: 15px;
+      height: 35px;
+    }
   }
   textArea {
-    width: 98%;
-    height: 100px;
+    width: 100%;
+    height: 170px;
+    padding: 5px;
+    @media ${({ theme }) => theme.desktop} {
+      font-size: 15px;
+    }
   }
 `;
