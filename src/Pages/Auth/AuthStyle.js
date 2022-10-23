@@ -84,13 +84,19 @@ export const LoginSocialBtn = styled(Button)`
       : ""};
   padding: 15px;
   margin: 5px 0;
+  border: 1px solid red;
   width: 400px;
   border: none;
   border-radius: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 1s ease-in;
   > span {
     padding: 0 10px;
+  }
+  @media screen and (max-width: 500px) {
+    width: 320px;
+    transition: 1s ease-in;
   }
 `;

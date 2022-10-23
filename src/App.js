@@ -29,20 +29,32 @@ function App() {
         <Routes>
           <Route
             path="/login"
-            element={isLogin === true ? <Navigate to="/" /> : <Login />}
+            element={isLogin.isLogin ? <Navigate to="/" /> : <Login />}
           />
           <Route
             path="/signup"
-            element={isLogin ? <Navigate to="/" /> : <Register />}
+            element={isLogin.isLogin ? <Navigate to="/" /> : <Register />}
           />
           <Route path="/" element={<Main />} />
-          <Route path="/create" element={<Create />} />
+          <Route
+            path="/create"
+            element={isLogin.isLogin ? <Create /> : <Navigate to="/" />}
+          />
           <Route path="/create/now" element={<CreatedItem />} />
-          <Route path="/draw" element={<Draw />} />
+          <Route
+            path="/draw"
+            element={isLogin.isLogin ? <Draw /> : <Navigate to="/" />}
+          />
           <Route path="/draw/:id" element={<DrewItem />} />
-          <Route path="/find" element={<Find />} />
+          <Route
+            path="/find"
+            element={isLogin.isLogin ? <Find /> : <Navigate to="/" />}
+          />
           <Route path="/find/:id" element={<FoundItem />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route
+            path="/profile"
+            element={isLogin.isLogin ? <Profile /> : <Navigate to="/" />}
+          />
         </Routes>
       </ThemeProvider>
     </BrowserRouter>
