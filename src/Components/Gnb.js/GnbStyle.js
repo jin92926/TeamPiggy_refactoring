@@ -91,3 +91,10 @@ export const GnbIcon = styled.div`
     display: none;
   }
 `;
+
+export const LogoutBtn = styled(Button)`
+  background-color: ${theme.blue};
+  color: ${theme.white};
+  padding: 3px;
+  border-radius: 5px;
+`;
