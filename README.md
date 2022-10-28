@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# Study Side Project - PIGGY
+## 나만의 행복을 담는 메모 서비스
+![piggy_logo](https://user-images.githubusercontent.com/50124980/198590144-2f8895a3-0ba6-4b9c-89a9-a9b1df3e838b.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 📝 팀 소개
+- **프로젝트명**: PIGGY
+- **팀원**:
+  - [프론트엔드] 김시라 / dosira868@gmail.com
+  - [프론트엔드] 남진혁 / jin92926@gmail.com
+  - [프론트엔드] 박서희 / sherlock130815@gmail.com
+  
+👉 [배포링크 바로가기](https://www.piggybank.tk/)
 
-## Available Scripts
+<br>
 
-In the project directory, you can run:
+# 🐷 서비스 기획
+> 어릴 적 돼지 저금통에 오십원, 백원 하나 둘씩 넣으며 동전을 모아본 경험이 있나요? <br/>
+차곡차곡 동전을 모아 무거워질 때쯤 꺼내보는 돼지 저금통처럼, 우리의 행복한 기억도 저금했다 꺼내보면 어떨까요?
+PIGGY는 내 행복했던 기억을 저장할 수 있고 랜덤으로 꺼내볼 수 있는 행복 메모 서비스입니다.
 
-### `npm start`
+<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# 서비스 소개
+- 일반 로그인과 구글, 깃헙 소셜 로그인을 통해 빠른 회원가입을 제공합니다.
+- 행복 모으기 페이지에서 나의 행복을 기록하고 저장할 수 있습니다.
+  - 날씨, 제목, 내용, 사진을 첨부 가능
+- 저장된 나의 행복을 행복 찾기 페이지에서 찾아볼 수 있습니다.
+- 저장된 나의 행복을 행복 뽑기 페이지에서 랜덤으로 뽑아볼 수 있습니다.
+- 내 행복 개수(무게), 사용자 정보를 마이 페이지(설정)에서 확인할 수 있습니다.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<br>
 
-### `npm test`
+# Skills
+`React`, `JavaScript`, `CSS`, `Styled-Component`, `Recoil`, `Firebase`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
