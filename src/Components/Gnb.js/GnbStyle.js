@@ -9,14 +9,19 @@ export const GnbContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   .desktop {
     display: flex;
     align-items: center;
     color: ${theme.white};
     background-color: ${theme.blue};
+    //추가
+    z-index: 6000;
   }
   .mobile {
     display: none;
+    //추가
+    z-index: 6000;
   }
   @media screen and (max-width: 500px) {
     .mobile {
@@ -64,7 +69,7 @@ export const Sidebar = styled.div`
   border: 1px solid ${theme.border};
   position: absolute;
   right: 0;
-  z-index: 1001;
+  z-index: 5001;
   .userinfo {
     width: 100%;
     height: 100px;
@@ -97,4 +102,5 @@ export const LogoutBtn = styled(Button)`
   color: ${theme.white};
   padding: 3px;
   border-radius: 5px;
+  margin-left: 5px;
 `;
