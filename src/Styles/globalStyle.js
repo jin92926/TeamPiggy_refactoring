@@ -1,4 +1,18 @@
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+import theme from "./theme";
+
+const GlobalStyle = createGlobalStyle`
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+a{
+  color: ${theme.primary}
+}
+`;
 
 export const Container = styled.div`
   display: flex;
@@ -6,6 +20,11 @@ export const Container = styled.div`
   align-items: center;
   width: 100%;
   height: 100vh;
+  background: linear-gradient(
+    180.45deg,
+    ${theme.violet} 1.69%,
+    ${theme.blue} 99.25%
+  );
 `;
 
 export const Button = styled.button`
@@ -19,3 +38,5 @@ export const Input = styled.input`
   outline: none;
   border-radius: 5px;
 `;
+
+export default GlobalStyle;
