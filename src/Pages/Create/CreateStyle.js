@@ -22,7 +22,7 @@ export const CreateBtn = styled(Button)`
   }
   @media ${({ theme }) => theme.desktop} {
     max-width: 1140px;
-    width: 90vw;
+    /* width: 90vw; */
     padding: 3%;
   }
 `;

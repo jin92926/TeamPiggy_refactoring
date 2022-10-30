@@ -8,19 +8,22 @@ export const CreateContainer = styled.div`
   height: 100%;
   justify-content: center;
   height: 100%;
-  z-index: 1000;
+  /* z-index: 4000; */
 
   .form__create {
     padding: 30px;
     height: 60vh;
+    z-index: 4000;
   }
   .form__find {
     padding: 30px 30px 20px 30px;
     height: 70vh;
+    z-index: 4000;
   }
   .form__detail {
     padding: 30px;
     height: 70vh;
+    z-index: 4000;
   }
   .form__create,
   .form__find,
@@ -34,10 +37,16 @@ export const CreateContainer = styled.div`
     justify-content: space-between;
     height: 80vh;
 
+    @media ${({ theme }) => theme.mobile} {
+      width: 90vw;
+      height: 70vh;
+    }
+
     @media ${({ theme }) => theme.desktop} {
       max-width: 1140px;
-      width: 100vw;
+      width: 90vw;
       margin-top: 70px;
+      height: 80vh;
     }
   }
 `;

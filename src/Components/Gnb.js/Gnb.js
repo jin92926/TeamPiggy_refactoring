@@ -20,7 +20,7 @@ export default function Gnb() {
   const [authState, setAuthState] = useRecoilState(loginState);
   const [isSidebar, setIsSidebar] = useState(false);
   const loginText = authState.isLogin ? "LOGOUT" : "LOGIN";
-  console.log(authState.userName);
+  // console.log(authState.userName);
 
   const onSidebar = () => {
     setIsSidebar(!isSidebar);
