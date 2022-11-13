@@ -77,7 +77,7 @@ function Create() {
       내용: text,
       url: attachmentUrl,
     };
-    // console.log(submitHappy);
+    console.log(submitHappy);
     setNewHappy(submitHappy);
 
     if (submitHappy.제목.length < 2 || submitHappy.내용.length < 2) {
@@ -131,8 +131,8 @@ function Create() {
                 required
               />
             </TitleContentArea>
-            <CreateBtn onClick={submitHandler}>행복 조각 모으기</CreateBtn>
           </form>
+          <CreateBtn onClick={submitHandler}>행복 조각 모으기</CreateBtn>
         </CreateContainer>
       </Container>
     </div>
