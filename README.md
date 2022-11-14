@@ -31,14 +31,55 @@ PIGGY는 내 행복했던 기억을 저장할 수 있고 랜덤으로 꺼내볼 
 <br>
 
 # 기능 소개
-## 일반 로그인과 구글, 깃헙 소셜 로그인
-<img width="1000" alt="로그인" src="https://user-images.githubusercontent.com/99721472/201576819-7805c481-e9f1-4ff6-9d3c-cc326ff8d8ed.gif" />
-## 나의 행복 저장 기능
-## 저장된 행복 랜덤 뽑기
-## 저장된 행복 리스트 조회
-## 저장된 행복 삭제
-## 사용자 정보 확인
-## 반응형 CSS 구현
+
+<details>
+<summary>일반 로그인과 구글, 깃헙 소셜 로그인</summary>
+<div markdown="1">
+<img width="300" alt="로그인" src="https://user-images.githubusercontent.com/99721472/201576819-7805c481-e9f1-4ff6-9d3c-cc326ff8d8ed.gif" />
+</div>
+</details>
+
+<details>
+<summary>나의 행복 저장 기능</summary>
+<div markdown="1">
+<img width="300" alt="저장" src="https://user-images.githubusercontent.com/99721472/201583399-d37ae691-26d5-4c8e-b01d-39bc4ced19a9.gif" />
+</div>
+</details>
+
+<details>
+<summary>저장된 행복 랜덤 뽑기</summary>
+<div markdown="1">
+<img width="300" alt="뽑기" src="https://user-images.githubusercontent.com/99721472/201583308-2947d436-5e87-4eda-8db3-0864cafcdb9c.gif" />
+</div>
+</details>
+
+<details>
+<summary>저장된 행복 리스트 조회</summary>
+<div markdown="1">
+<img width="300" alt="찾기" src="https://user-images.githubusercontent.com/99721472/201583376-0c090154-98eb-41af-bafb-7eed81aa9a8e.gif" />
+</div>
+</details>
+
+<details>
+<summary>저장된 행복 삭제</summary>
+<div markdown="1">
+<img width="300" alt="삭제" src="https://user-images.githubusercontent.com/99721472/201583362-29300a3c-c094-4040-a780-735225673695.gif" />
+</div>
+</details>
+
+<details>
+<summary>사용자 정보 확인과 로그아웃</summary>
+<div markdown="1">
+<img width="300" alt="사용자 정보 확인과 로그아웃" src="https://user-images.githubusercontent.com/99721472/201583367-92b29d5a-e198-46ee-8101-115fa0b0f330.gif" />
+</div>
+</details>
+
+<details>
+<summary>반응형 CSS</summary>
+<div markdown="1">
+<img width="600" alt="반응형 CSS" src="https://user-images.githubusercontent.com/99721472/201583856-fef2cf66-f381-4660-aace-5e539a9157df.gif" />
+</div>
+</details>
 
 <br>
 
