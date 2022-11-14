@@ -30,6 +30,18 @@ PIGGY는 내 행복했던 기억을 저장할 수 있고 랜덤으로 꺼내볼 
 
 <br>
 
+# 기능 소개
+## 일반 로그인과 구글, 깃헙 소셜 로그인
+<img width="1000" alt="로그인" src="https://user-images.githubusercontent.com/99721472/201576819-7805c481-e9f1-4ff6-9d3c-cc326ff8d8ed.gif" />
+## 나의 행복 저장 기능
+## 저장된 행복 랜덤 뽑기
+## 저장된 행복 리스트 조회
+## 저장된 행복 삭제
+## 사용자 정보 확인
+## 반응형 CSS 구현
+
+<br>
+
 # Skills
 `React`, `JavaScript`, `CSS`, `Styled-Component`, `Recoil`, `Firebase`
 
